@@ -1,7 +1,7 @@
 //Thread and Example in C++
 //In every Application has a default thread which is main(). inside main thread we can creat a new threads.
 //Thread is also known as light weight process,a single process may have many threads.
-//Examples: in a browser we can open man tab and each tab represents a thread.
+//Examples: in a browser we can open many tab and each tab represents a thread.
 //In a MS world is also example of multiple threads that is for "formating the text" and "spell check".
 //The below code represents how to creat a thread and access the thread in C++.
 #include <iostream>
