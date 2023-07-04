@@ -1,0 +1,49 @@
+//Thread and Example in C++
+//In every Application has a default thread which is main(). inside main thread we can creat a new threads.
+//Thread is also known as light weight process,a single process may have many threads.
+//Examples: in a browser we can open man tab and each tab represents a thread.
+//In a MS world is also example of multiple threads that is for "formating the text" and "spell check".
+//The below code represents how to creat a thread and access the thread in C++.
+#include <iostream>
+#include<thread>
+#include<chrono>
+#include<algorithm>
+#define ll long long
+using namespace std;
+using namespace std::chrono;
+ll countEvens = 0;//store the Count of the even numbers.
+ll countOdds = 0;
+//Function to find the even numbers between the given range including end.
+void findEvenNums(ll start, ll end){
+
+	for(ll i = start;i<=end;i++){
+		if(i%2==0){
+			countEvens++;
+		}
+	}
+}
+//Function to find odd numbers between the given range.
+void findOddNums(ll start, ll end){
+	for(int i = 0;i<=end;i++){
+		if(i%2==1){
+			countOdds++;
+		}
+	}
+}
+
+int main() {
+	
+	ll start = 1, end = 1000;
+	//creat a thread t1 and it takes funcion name and parameters.
+    std::thread t1(findEvenNums, start, end);
+	//creat a thread t2 and it takes funcion name and parameters.
+	std::thread t2(findOddNums, start, end);
+	//the join() call that helps to run two thread parelally with main() thread.
+	//join t1 to main() thread.
+	t1.join();
+	//Join t2 to main() thread.
+	t2.join();
+	cout<<countEvens<<" "<<countOdds;
+	return 0;
+}
+
