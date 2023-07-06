@@ -46,4 +46,5 @@ int main() {
 	cout<<countEvens<<" "<<countOdds;
 	return 0;
 }
-
+//diffrent ways to creat a thread, there are 5 way to creat threads.
+//1. Function pointer, 2. Lambda function, 3.Functor (function object), 4.Non-static member function, 5. static member fuction
